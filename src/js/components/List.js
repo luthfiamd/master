@@ -1,7 +1,5 @@
 import React from 'react';
 import Item from './Item';
-import Modal from './Modal';
-import Form from './Form';
 import Store from './../stores/Store';
 import * as AppActions from './../actions/AppActions';
 
@@ -25,13 +23,13 @@ export default class List extends React.Component {
   render() {
     let items = Object.keys(this.state.items).map(function(k) {
       let i = this.state.items[k];
-      return <Item key={k} id={i.id} first_name={i.first_name} last_name={i.last_name} sex={i.sex} />;
+      return <Item key={k} id={i.id} nama_barang={i.nama_barang} harga_jual={i.harga_jual} harga_beli={i.harga_beli} stock={i.stock}/>;
     }.bind(this));
 
     return (
       <div className="panel">
         <p className="panel-heading">
-          List
+          Daftar Barang
         </p>
         <div className="panel-block has-text-centered">
           {(function() {
@@ -39,9 +37,10 @@ export default class List extends React.Component {
               return <table className="table">
                        <thead>
                          <tr>
-                           <th>First Name</th>
-                           <th>Last Name</th>
-                           <th>Sex</th>
+                           <th>Nama Barang</th>
+                           <th>Harga Jual</th>
+                           <th>Harga Beli</th>
+                           <th>Stock</th>
                            <th></th>
                          </tr>
                        </thead>
@@ -51,7 +50,7 @@ export default class List extends React.Component {
                      </table>;
             }
           })()}
-          <a className="button is-link" onClick={this._handleAddUser}>create a user</a>
+          <a className="button is-link" onClick={this._handleAddUser}>Tambah Barang</a>
         </div>
       </div>
     );

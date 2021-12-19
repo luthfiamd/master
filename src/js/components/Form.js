@@ -1,6 +1,5 @@
 import React from 'react';
 import TextField from './TextField';
-import SelectField from './SelectField';
 import Modal from './Modal';
 import Store from './../stores/Store';
 import * as AppActions from './../actions/AppActions';
@@ -39,10 +38,10 @@ class Form extends React.Component {
     let title;
 
     if (this.state.mode == 'edit'){
-      title = "Edit User: " + this.state.data.first_name
+      title = "Ubah Barang: " + this.state.data.nama_barang
     }
     else {
-      title = "New User"
+      title = "Barang Baru"
     }
 
 
@@ -54,13 +53,10 @@ class Form extends React.Component {
             <button className="delete" onClick={this._handleClose}></button>
           </header>
           <section className="modal-card-body">
-            <TextField label="First Name" name="first_name" value={this.state.data.first_name} errors={this.state.errors['first_name']} />
-            <TextField label="Last Name" name="last_name" value={this.state.data.last_name}  errors={this.state.errors['last_name']} />
-            <SelectField label="Sex" name="sex" value={this.state.data.sex} errors={this.state.errors['sex']}>
-              <option value="">- Select -</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </SelectField>
+            <TextField label="Nama Barang" name="nama_barang" value={this.state.data.nama_barang} errors={this.state.errors['nama_barang']} />
+            <TextField label="Harga Jual" name="harga_jual" value={this.state.data.harga_jual}  errors={this.state.errors['harga_jual']} />
+            <TextField label="Harga Beli" name="harga_beli" value={this.state.data.harga_beli} errors={this.state.errors['harga_beli']}/>
+            <TextField label="Stock" name="stock" value={this.state.data.stock} errors={this.state.errors['stock']}/>
           </section>
           <footer className="modal-card-foot">
             <button className="button is-primary">Save</button>

@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/llopez/Crud.react.git"
+    "url": "https://github.com/luthfiamd/master"
   },
-  "author": "Luis Lopez",
+  "author": "Ahmad Luthfi",
   "license": "ISC",
   "dependencies": {
     "events": "^1.1.1",

@@ -25,9 +25,10 @@ export default class Item extends React.Component {
   render() {
     return (
       <tr>
-        <td>{this.props.first_name}</td>
-        <td>{this.props.last_name}</td>
-        <td>{this.props.sex}</td>
+        <td>{this.props.nama_barang}</td>
+        <td>{this.props.harga_jual}</td>
+        <td>{this.props.harga_beli}</td>
+        <td>{this.props.stock}</td>
         <td>
           <a className="button is-small" onClick={this._handleEdit}>Edit</a>
           <a className="button is-small" onClick={this._handleRemove}>Remove</a>

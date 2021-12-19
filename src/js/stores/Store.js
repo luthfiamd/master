@@ -9,14 +9,16 @@ let _list = {
 
 let _form = {
   data: {
-    first_name: '',
-    last_name: '',
-    sex: ''
+    nama_barang: '',
+    harga_jual: '',
+    harga_beli: '',
+    stock: ''
   },
   errors: {
-    first_name: [],
-    last_name: [],
-    sex: []
+    nama_barang: [],
+    harga_jual: [],
+    harga_beli: [],
+    stock:[]
   },
   mode: 'create'
 };
@@ -30,25 +32,29 @@ const Store = Object.assign({}, EventEmitter.prototype, {
 
   addUser: function(data) {
     let validator = new Validator(data);
-    validator.validatePresence('first_name').
-    validatePresence('last_name').
-    validatePresence('sex');
+    validator.validatePresence('nama_barang').
+    validatePresence('harga_jual').
+    validatePresence('harga_beli').
+    validatePresence('stock');
     if(validator.isValid()){
       _list.items[_list.index+=1] = {
-        first_name: data.first_name,
-        last_name: data.last_name,
-        sex: data.sex,
+        nama_barang: data.nama_barang,
+        harga_jual: data.harga_jual,
+        harga_beli: data.harga_beli,
+        stock: data.stock,
         id: _list.index
       }
       _form.data = {
-        first_name: '',
-        last_name: '',
-        sex: ''
+        nama_barang: '',
+        harga_jual: '',
+        harga_beli: '',
+        stock: ''
       };
       _form.errors = {
-        first_name: [],
-        last_name: [],
-        sex: []
+        nama_barang: [],
+        harga_jual: [],
+        harga_beli: [],
+        stock: []
       };
       _modal.open = false;
     }else{
@@ -59,26 +65,29 @@ const Store = Object.assign({}, EventEmitter.prototype, {
 
   editUser: function(data) {
     let validator = new Validator(data);
-    validator.validatePresence('first_name').
-    validatePresence('last_name').
-    validatePresence('sex');
-
+    validator.validatePresence('nama_barang').
+    validatePresence('harga_jual').
+    validatePresence('harga_beli').
+    validatePresence('stock');
     if(validator.isValid()){
-      _list.items[data.id] = {
-        first_name: data.first_name,
-        last_name: data.last_name,
-        sex: data.sex,
-        id: data.id
+      _list.items[_list.index+=1] = {
+        nama_barang: data.nama_barang,
+        harga_jual: data.harga_jual,
+        harga_beli: data.harga_beli,
+        stock: data.stock,
+        id: _list.index
       }
       _form.data = {
-        first_name: '',
-        last_name: '',
-        sex: ''
+        nama_barang: '',
+        harga_jual: '',
+        harga_beli: '',
+        stock: ''
       };
       _form.errors = {
-        first_name: [],
-        last_name: [],
-        sex: []
+        nama_barang: [],
+        harga_jual: [],
+        harga_beli: [],
+        stock: []
       };
       _modal.open = false;
     }else{
@@ -109,9 +118,10 @@ const Store = Object.assign({}, EventEmitter.prototype, {
 
     if(mode == 'edit')
       _form.data = {
-        first_name: _list.items[id].first_name,
-        last_name: _list.items[id].last_name,
-        sex: _list.items[id].sex,
+        nama_barang: _list.items[id].nama_barang,
+        harga_jual: _list.items[id].harga_jual,
+        harga_beli: _list.items[id].harga_beli,
+        stock: _list.items[id].stock,
         id: id
       }
 

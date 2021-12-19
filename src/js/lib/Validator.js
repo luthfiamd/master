@@ -2,9 +2,10 @@ export default class Validator {
   constructor(data) {
     this.data = data;
     this.errors = {
-      first_name: [],
-      last_name: [],
-      sex: []
+      nama_barang: [],
+      harga_jual: [],
+      harga_beli: [],
+      stock:[]
     };
   }
 
@@ -16,9 +17,10 @@ export default class Validator {
   }
 
   isValid() {
-    let count = Object.keys(this.errors.first_name).length +
-    Object.keys(this.errors.last_name).length +
-    Object.keys(this.errors.sex).length;
+    let count = Object.keys(this.errors.nama_barang).length +
+    Object.keys(this.errors.harga_jual).length +
+    Object.keys(this.errors.harga_beli).length +
+    Object.keys(this.errors.stock).length ;
 
     return count == 0;
   }
